@@ -70,9 +70,9 @@ th {
     width: 10px;
     height: 10px;
     background-color: white;
-    position: relative;
+    position: absolute;
     top: 20px;
-    right: -50px
+    right: 0px
 }
 
 .paddle {

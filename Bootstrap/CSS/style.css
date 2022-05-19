@@ -1,0 +1,67 @@
+/* body {
+    background-color: rgb(159, 229, 133);
+} */
+
+.title {
+    font-family: fantasy;
+    text-align: center;
+    font-size: 60pt;
+    margin-top: 35px;
+}
+
+#contactinfo {
+    text-align: center;
+    font-size: 12pt;
+}
+
+.row {
+    margin-top: 25px;
+}
+
+.row img {
+    max-height: none;
+}
+
+.nav-link {
+    font-size: 18pt;
+}
+
+#navbarTogglerDemo01 {
+    justify-content: center;
+    margin: 10px;
+}
+
+.menus {
+    text-align: center;
+}
+
+.card {
+    width: 20rem;
+    margin-bottom: 10px;
+}
+
+img {
+    margin-top: 10px;
+}
+
+.footer {
+    text-align: center;
+}
+
+#aboutus {
+    font-size: 18pt;
+    margin: 100px;
+}
+
+#aboutus img {
+    width: 10%;
+    text-align: center;
+}
+
+.accordion-button {
+    justify-content: center;
+}
+
+#faq {
+    margin: 25px;
+}
