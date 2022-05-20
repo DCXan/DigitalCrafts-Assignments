@@ -1,0 +1,38 @@
+body {
+    background-color: rgb(160, 222, 236);
+}
+
+.header, .footer {
+    background-color: rgb(56, 184, 171);
+    height: 60px;
+    margin: 20px;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
+aside {
+    background-color: rgb(136, 214, 87);
+    margin: 20px;
+    width: 25%;
+}
+
+.article {
+    background-color: rgb(238, 173, 52);
+    margin: 20px;
+    width: 75%;
+    height: 75vh;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+}
+
+.image {
+    background-color: rgb(235, 204, 81);
+    margin: 20px;
+    height: 30%;
+    width: 30%;
+    
+}

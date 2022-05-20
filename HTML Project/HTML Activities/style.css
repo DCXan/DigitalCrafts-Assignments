@@ -1,0 +1,25 @@
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    body {
+      background-color: green;
+    }
+
+    img {
+        display: none;
+    }
+  }
+
+  /* @media screen and (min-width: 481px) and (max-width: 767px) {
+    body {
+      background-color: orange;
+    }
+  } */
+
+  @media screen and (min-width: 1281px) {
+    body {
+      background-color: purple;
+    }
+
+    img {
+        display: block;
+    }
+  }
