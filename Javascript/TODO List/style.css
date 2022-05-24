@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#inputArea {
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+}
+
+button {
+    border: none;
+    background: none;
+    color: white;
+    font-size: 8pt;
+}
+
+.taskItem {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(66, 145, 235);
+    color: white;
+    font-size: 12pt;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    margin: 5 0 5 0;
+    justify-content: space-between;
+    width: 250;
+}
+
+ #taskAddButton {
+     background-color: rgb(66, 145, 235);
+     padding: 3 15 3 15;
+     font-size: 10pt;
+ }
+
+ #pendingTasks, #completedTasks {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+    padding: 5 10 5 10;
+ }
+
+ /* .taskItem input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+ } */
+
+
+ 
