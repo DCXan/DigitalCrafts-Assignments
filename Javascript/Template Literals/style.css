@@ -5,8 +5,10 @@ img {
 
 #menu {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .item {
@@ -17,7 +19,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 600;
+    width: 500;
 }
 
 #displayMsg {
