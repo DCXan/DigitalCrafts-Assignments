@@ -1,0 +1,9 @@
+img {
+    height: 500;
+}
+
+.article {
+    margin: 10 0 50 0;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    padding: 0 0 50 0;
+}
