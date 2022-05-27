@@ -1,13 +1,16 @@
 const display = document.getElementById('display')
 const dropDown = document.getElementById('newsSources')
 
+let allArticles = news.articles
+
 let sourceNames = sources.sources.map(function(source){
     return source.name
 })
 
-function displayArticles(newsArticles) {
+// Takes in a list of articles and displays them on the page
+function displayArticles(articleList) {
 
-    let articles = newsArticles.map(function(article) {
+    let articles = articleList.map(function(article) {
 
 
         return `
@@ -24,14 +27,29 @@ function displayArticles(newsArticles) {
     display.innerHTML = articles.join('')
 }
 
-function addSourceToDropDown(sources) {
+// Takes list of sources and adds each source name to the dropdown menu
+function addSourceToDropDown(sourceList) {
 
-    let sourceItems = sources.map(function(source){
+    let sources = sourceList.map(function(source){
         return `<option>${source}</option>`
     })
 
-    dropDown.innerHTML = sourceItems.join('')
+    dropDown.insertAdjacentHTML('beforeend', sources)
 }
 
+
+
 addSourceToDropDown(sourceNames)
-displayArticles(news.articles)
+
+dropDown.addEventListener('change', function(){
+    const selectedSource = this.value
+    const filteredArticles = allArticles.filter(function(article){
+        return article.source.name == selectedSource
+    })
+    // console.log(this.value)
+    // console.log(this)
+
+    displayArticles(filteredArticles)
+})
+
+displayArticles(allArticles)
