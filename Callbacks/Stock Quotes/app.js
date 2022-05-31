@@ -14,17 +14,17 @@ let textbox = document.getElementById("textbox")
 let button = document.getElementById("submitBtn")
 let stockName = document.getElementById("stockName")
 let stockPrice = document.getElementById("stockPrice")
-symbol = textbox.value.toUpperCase()
+let symbol = textbox.value.toUpperCase()
 
 button.addEventListener('click', function(symbol){
-  symbol = textbox.value.toUpperCase()
   let stock = getStockQuote(symbol)
   stockName.innerHTML = stock.name
   stockPrice.innerHTML = stock.price
   })
 
-setInterval(function(symbol){
-  getStockQuote(symbol)
+window.setInterval(function(symbol){
+  let stock = getStockQuote(symbol)
+  stockName.innerHTML = stock.name
   stockPrice.innerHTML = stock.price
   }, 2000)
 
