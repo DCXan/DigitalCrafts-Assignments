@@ -2,7 +2,7 @@ const dropdown = document.getElementById('dropdownMenu')
 const movieDisplay = document.getElementById('movieDisplay')
 
 let request = new XMLHttpRequest()
-request.open('get', 'http://www.omdbapi.com/?s=batman&apikey=ab30b59c')
+request.open('get', '//www.omdbapi.com/?s=batman&apikey=ab30b59c')
 request.send()
 
 request.addEventListener('load', function(){
@@ -25,7 +25,7 @@ request.addEventListener('load', function(){
 function movieSelected(imdbID){
     console.log(imdbID)
     let request2 = new XMLHttpRequest()
-    let movieByID = `http://www.omdbapi.com/?i=${imdbID}&apikey=ab30b59c`
+    let movieByID = `//www.omdbapi.com/?i=${imdbID}&apikey=ab30b59c`
     request2.open('get', movieByID)
     request2.send()
 
