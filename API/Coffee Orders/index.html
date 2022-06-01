@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <h1>Coffee Order Management Tool</h1>
+    <div id="createOrderSection">
+      <h2>Create an Order:</h2>
+      <form id="form">
+        <div>
+          <label>Email: </label>
+          <input
+            id="emailInput"
+            type="text"
+            placeholder="Email Address"
+            pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+            required
+          />
+        </div>
+        <div>
+          <label>Drink: </label>
+          <input
+            id="drinkInput"
+            type="text"
+            placeholder="Drink Type"
+            required
+          />
+        </div>
+        <div>
+          <label>Size: </label>
+          <input
+            id="sizeInput"
+            type="text"
+            placeholder="Small / Medium / Large"
+            required
+          />
+        </div>
+        <div>
+          <label>Price: </label>
+          <input
+            id="priceInput"
+            type="number"
+            step="0.01"
+            placeholder="Price"
+            required
+          />
+        </div>
+        <div>
+          <button id="submitOrderButton">Submit Order</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="findOrderSection">
+      <h2>Find / Delete Order</h2>
+      
+        <input
+          id="emailTextbox"
+          type="text"
+          placeholder="Enter email address"
+          pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+        />
+        <div>
+          <button id="findButton">Find Order</button>
+          <button id="deleteButton">Delete Order</button>
+        </div>
+      
+    </div>
+
+    <div id="locateOrderSection">
+      <h2>Order Locator:</h2>
+      <div id="searchResult">
+
+      </div>
+    </div>
+
+    <h2>Orders:</h2>
+    <div id="ordersDisplay">
+      <!-- <div class = "order">
+                <ul>
+                    <li>Email: john.smith@gmail.com</li>
+                    <li>Type: Iced Latte</li>
+                    <li>Size: Medium</li>
+                    <li>Price: $5.75</li>
+                </ul>
+            </div> -->
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

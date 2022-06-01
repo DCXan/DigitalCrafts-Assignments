@@ -10,7 +10,6 @@ request.addEventListener('load', function(){
 
     let factItems = facts.map(function(fact){
         return `<li>${fact.fact}</li>`
-
     })
 
     factList.innerHTML = factItems.join('')

@@ -1,12 +1,13 @@
-const factList = document.getElementById('factList')
+const display = document.getElementById('display')
 
 let request = new XMLHttpRequest()
-request.open('get', 'http://api.icndb.com/jokes/randomLinks')
+request.open('get', 'http://api.icndb.com/jokes/random')
 request.send()
 
 request.addEventListener('load', function(){
-    let joke = request.value.joke
-    factList.innerHTML = `<li>${joke}</li>`
+    let object = JSON.parse(this.responseText)
+    let joke = object.value.joke
+    display.innerHTML = `<p>${joke}</p>`
 })
 
 
