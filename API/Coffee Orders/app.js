@@ -110,7 +110,3 @@ submitButton.addEventListener("click", function () {
     priceInput.value = '';
   });
 });
-
-form.addEventListener('submit', function(event){
-    event.preventDefault()
-})
