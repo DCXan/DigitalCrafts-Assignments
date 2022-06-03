@@ -26,7 +26,8 @@ function getWeather(displayWeatherCallback) {
 
 function displayWeather(weather) {
   display.innerHTML = `
-    <h2 id="locationDisplay">Selected Location: ${weather.name}</h2>
+    <h2 id="locationDisplay">Selected Location:</div>
+    <h3>${weather.name}</h3>
     <div id="tempDisplay">
         <div>Current Temperature: ${weather.main.temp} °F</div>
         <div>Low: ${weather.main.temp_min} °F</div>
@@ -56,7 +57,8 @@ function getCurrentLocationWeather(displayWeatherCallback) {
 
 function displayCurrentLocationWeather(weather){
     currentLocation.innerHTML = `
-            <h2 id="locationDisplay">Current Location: ${weather.name}</h2>
+            <h2 id="locationDisplay">Current Location:</div>
+            <h3>${weather.name}</h3>
             <div id="tempDisplay">
                 <div>Current Temperature: ${weather.main.temp} °F</div>
                 <div>Low: ${weather.main.temp_min} °F</div>
