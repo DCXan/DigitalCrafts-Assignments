@@ -44,7 +44,13 @@ app.post('/add-trip', (req, res) => {
 
 app.post('/delete-trip', (req, res) => {
 
-    trips = trips.filter(trip => trip.tripID == req.body.tripID)
+    // trips = trips.filter((trip) => trip.id != req.body.tripID)
+
+    for (let i = 0; i < trips.length; i++) {
+        if (trips[i].id == req.body.tripID) {
+            trips.splice(i, 1)
+        }
+    }
 
     res.redirect('/trips')
 })
