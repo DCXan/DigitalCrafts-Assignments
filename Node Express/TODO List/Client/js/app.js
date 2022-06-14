@@ -40,16 +40,24 @@ function getTasks(displayTasksCB) {
 }
 
 function displayTasks(tasks) {
+    
     const taskItems = tasks.map(task => {
         return `
-        <li><div>Task: ${task.title}</div>
+        <li id = "liTask"><div>Task: ${task.title}</div>
         <div>Priority: ${task.priority}</div>
         <div>Date Created: ${task.dateCreated}</div>
+        <div><button id="removeButton">Delete Task</button></div>
         `
     })
 
     taskUL.innerHTML = taskItems.join('')
 }
+
+let removeButton = document.getElementById("removeButton")
+removeButton.addEventListener("click", function () {
+    // liTask.parentNode.removeChild(liTask);
+    console.log(this)
+  })
 
 getTasks((tasks) => {
     displayTasks(tasks)
