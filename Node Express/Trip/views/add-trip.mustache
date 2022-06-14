@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Tracker App</title>
+</head>
+<body>
+    <form method = 'POST' action = '/add-trip'>
+      <div>
+        <label>Enter Trip Name:</label>
+        <input type="text" placeholder="Trip Name" name="title" />
+      </div>
+      <div>
+        <label>Enter Photo Link:</label>
+        <input type="text" placeholder="Image URL" name="photo" />
+      </div>
+      <div>
+        <label>Trip Duration:</label>
+        <div>
+          <label>From:</label>
+          <input type="date" name="departDate"/>
+          <label>To:</label>
+          <input type="date" name="returnDate"/>
+        </div>
+        <div>
+        <button>Add Trip</button>
+        </div>
+      </div>
+    </form>
+</body>
+</html>

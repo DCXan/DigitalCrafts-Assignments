@@ -1,0 +1,30 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trip Tracker App</title>
+  </head>
+  <body>
+    <h1>My Trips</h1>
+    <a href="/add-trip">Add a Trip</a>
+    <ul>
+    {{#tripList}}
+        <li>{{title}}
+            <div>
+                <img src="{{photo}}">
+            </div>
+            
+            <div>
+                From {{departDate}} To {{returnDate}}
+            </div>
+            <form method = 'POST' action = '/delete-trip'>
+                <input type="hidden" value = {{id}} name="tripID">
+                <button>Delete Trip</button>
+            </form>
+        </li>
+    {{/tripList}}
+    </ul>
+      
+  </body>
+</html>
