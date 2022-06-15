@@ -11,7 +11,6 @@ app.engine('mustache', mustacheExpress())
 app.set('views', './views')
 app.set('view engine', 'mustache')
 
-
 app.listen(7777, () => {
     console.log('Server is running.')
 })
