@@ -60,7 +60,7 @@ router.get('/genre/:genre', (req, res) => {
         if (filteredMovies.length === 0) {
             res.render('movies-list', {message: `No ${genre} movies to display.`})
         } else {
-        res.render('movies-list')
+        res.render('movies-list', {allMovies: filteredMovies})
         }
     }
 })

@@ -6,6 +6,10 @@
     <title>Add a Movie</title>
 </head>
 <body>
+    <form method="POST" action="/logout">
+        <button>Log out</button>
+      </form>
+
     <div id="movieInputArea">
         <form method="POST" action="/movies/create">
             <input type="text" placeholder="Movie Title" name="title"/>
