@@ -3,33 +3,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{{genre}} Movies</title>
 </head>
 <body>
-    <h1>Movie List</h1>
-    <a href="/movies/create">Add a Movie</a>
+    <h1>{{genre}} Movies</h1>
+    <a href="/movies/">Back to Main Page</a>
     <div>
-      <form name="genre" method="POST" action="/movies/genre/:genre">
-        <label for="genre">Filter movies by genre:</label>
-        <select id="genreSelector">
-          <option value="all">All Genres</option>
-          <option value="action">Action</option>
-          <option value="drama">Drama</option>
-          <option value="comedy">Comedy</option>
-          <option value="horror">Horror</option>
-          <option value="romance">Romance</option>
-          <option value="sci-fi">Sci-Fi</option>
-          <option value="thriller">Thriller</option>
-          <option value="other">Other</option>
-        </select>
-      </form>
-    </div>
+        <form method="POST" action="/movies/genre">
+          <label for="genre">Select genre to filter by:</label>
+          <select name = "genre">
+            <option value="all">All Genres</option>
+            <option value="action">Action</option>
+            <option value="drama">Drama</option>
+            <option value="comedy">Comedy</option>
+            <option value="horror">Horror</option>
+            <option value="romance">Romance</option>
+            <option value="sci-fi">Sci-Fi</option>
+            <option value="thriller">Thriller</option>
+            <option value="other">Other</option>
+          </select>
+          <button>Apply Filter</button>
+        </form>
+      </div>
     <ul>
       {{#filteredMovies}}
       <li>
-        {{ title }} - Genre: {{ genre }}
-        {{ description }}
-        <img src="{{ image }}" />
+        <div>{{ title }}</div>
+        <div>Genre: {{ genre }}</div>
+        <div>{{ description }}</div>
+        <div></div><img src="{{image}}"/></div>
         <form method="POST" action="/movies/delete">
           <input type="hidden" name="id" value="{{ id }}" />
           <button>Delete Movie</button>
@@ -37,5 +39,9 @@
       </li>
       {{/filteredMovies}}
     </ul>
+
+    {{^filteredMovies}}
+    No movies in this genre!
+    {{/filteredMovies}}
 </body>
 </html>

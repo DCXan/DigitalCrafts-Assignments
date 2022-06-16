@@ -9,9 +9,9 @@
     <h1>Movie List</h1>
     <a href="/movies/create">Add a Movie</a>
     <div>
-      <form name="genre" method="POST" action="/movies/genre/:genre">
-        <label for="genre">Filter movies by genre:</label>
-        <select id="genreSelector">
+      <form method="POST" action="/movies/genre">
+        <label for="genre">Select genre to filter by:</label>
+        <select name = "genre">
           <option value="all">All Genres</option>
           <option value="action">Action</option>
           <option value="drama">Drama</option>
@@ -22,14 +22,16 @@
           <option value="thriller">Thriller</option>
           <option value="other">Other</option>
         </select>
+        <button>Apply Filter</button>
       </form>
     </div>
     <ul>
       {{#allMovies}}
       <li>
-        {{ title }} - Genre: {{ genre }}
-        {{ description }}
-        <img src="{{ image }}" />
+        <div>{{ title }}</div>
+        <div>Genre: {{ genre }}</div>
+        <div>{{ description }}</div>
+        <div></div><img src="{{image}}"/></div>
         <form method="POST" action="/movies/delete">
           <input type="hidden" name="id" value="{{ id }}" />
           <button>Delete Movie</button>
