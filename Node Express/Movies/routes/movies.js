@@ -1,5 +1,4 @@
 const express = require('express')
-const { append } = require('express/lib/response')
 const router = express.Router() 
 
 let count = 1
@@ -51,39 +50,19 @@ router.post('/delete', (req, res) => {
 
 // Create a route on movie list to filter movies
 
-// router.post('/', (req, res) => {
-//     const genre = req.body.genre
-//     console.log(genre)
-//     if (genre == 'all') {
-//         res.redirect('/movies')
-//     } else {
-//         console.log(genre)
-//         res.redirect('/movies/genre/:genre')
-//     }
-    
-// })
-
-// router.get('/genre/:genre', (req, res) => {
-//     const genre = req.params.genre
-//     let filteredMovies = movies.filter(movie => movie.genre == genre)
-//     movies = filteredMovies
-//     res.redirect('/movies')
-// })
-
-router.post('/genre', (req, res) => {
-    const genre = req.body.genre
+router.get('/genre/:genre', (req, res) => {
+    const genre = req.params.genre
     if (genre == 'all') {
         res.redirect('/movies')
     } else {
-        let filteredMovies = movies.filter(movie => movie.genre == genre)
-        res.render('filtered-movies', {filteredMovies: filteredMovies})
-    }
-})
-
-router.get('/genre/:genre', (req, res) => {
-    const genre = req.params.genre
     let filteredMovies = movies.filter(movie => movie.genre == genre)
-        res.render('filtered-movies', {filteredMovies: filteredMovies})
+
+        if (filteredMovies.length === 0) {
+            res.render('movies-list', {message: `No ${genre} movies to display.`})
+        } else {
+        res.render('movies-list')
+        }
+    }
 })
 
 module.exports = router

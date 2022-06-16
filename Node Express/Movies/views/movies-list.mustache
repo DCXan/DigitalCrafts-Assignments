@@ -9,9 +9,9 @@
     <h1>Movie List</h1>
     <a href="/movies/create">Add a Movie</a>
     <div>
-      <form method="POST" action="/movies/genre">
+      <form id="genreForm">
         <label for="genre">Select genre to filter by:</label>
-        <select name = "genre">
+        <select id = "genreSelect" name = "genre">
           <option value="all">All Genres</option>
           <option value="action">Action</option>
           <option value="drama">Drama</option>
@@ -22,7 +22,7 @@
           <option value="thriller">Thriller</option>
           <option value="other">Other</option>
         </select>
-        <button>Apply Filter</button>
+        <button id = "applyFilterButton">Apply Filter</button>
       </form>
     </div>
     <ul>
@@ -39,9 +39,13 @@
       </li>
       {{/allMovies}}
     </ul>
-
-    {{^allMovies}}
+    {{message}}
+    <p>{{^allMovies}}
     Movie list is empty!
-    {{/allMovies}}
+    {{/allMovies}}</p>
+
+
+    <script src = "/client/app.js"></script>
+
   </body>
 </html>
