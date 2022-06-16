@@ -56,3 +56,22 @@ app.post('/login', (req, res) => {
     }
 })
 
+app.get('/register', (req, res) => {
+    res.render('register')
+})
+
+app.post('/register', (req, res) => {
+    const username = req.body.username
+    const password = req.body.password
+    const newUser = {username: username, password: password}
+    users.push(newUser)
+
+    res.redirect('/login')
+})
+
+app.post('/logout', (req, res) => {
+    if (req.session) {
+        req.session.destroy()
+    }
+    res.render('login', {logoutMessage: 'You have been logged out.'})
+})
