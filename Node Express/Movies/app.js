@@ -27,9 +27,8 @@ app.listen(7777, () => {
 })
 
 let users = [
-    {username: 'dcxan', password: 'secretPW88'},
-    {username: 'guest', password: 'password123'},
-    {}
+    {username: 'dcxan', password: '123', id: 1},
+    {username: 'guest', password: '123', id: 2}
 ]
 
 app.get('/login', (req, res) => {
@@ -45,7 +44,7 @@ app.post('/login', (req, res) => {
 
     if (activeUser) {
         if (req.session) {
-            req.session.user = activeUser.username
+            req.session.user = activeUser
         }
         console.log(req.session.user)
         console.log(activeUser)

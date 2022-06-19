@@ -38,7 +38,7 @@
         <div>{{ description }}</div>
         <div></div><img src="{{image}}"/></div>
         <form method="POST" action="/movies/delete">
-          <input type="hidden" name="id" value="{{ id }}" />
+          <input type="hidden" name="id" value="{{ movieID }}" />
           <button>Delete Movie</button>
         </form>
       </li>

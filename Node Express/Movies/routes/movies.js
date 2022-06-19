@@ -1,14 +1,16 @@
 const express = require('express')
 const router = express.Router() 
 
-let count = 1
+
 let movies = []
+let movieID = 1
 
 
 // Create root /movies route to display all movies
 
 router.get('/', (req, res) => {
-    res.render('movies-list', {allMovies: movies})
+    let userMovies = movies.filter(movie => movie.userID == req.session.user.id)
+    res.render('movies-list', {allMovies: userMovies})
 })
 
 
@@ -25,16 +27,18 @@ router.post('/create', (req, res) => {
     const description = req.body.description
     const genre = req.body.genre
     const image = req.body.imageURL
-    const id = count
     const movie = {
         title: title,
         description: description,
         genre: genre,
         image: image,
-        id: id
+        userID: req.session.user.id,
+        movieID: movieID
     }
-    count += 1
+    movieID += 1
+    console.log(movie)
     movies.push(movie)
+    console.log(movies)
 
     res.redirect('/movies')
 })
@@ -43,7 +47,7 @@ router.post('/create', (req, res) => {
 
 router.post('/delete', (req, res) => {
     const movieID = req.body.id
-    movies = movies.filter(movie => movie.id != movieID)
+    movies = movies.filter(movie => movie.movieID != movieID)
 
     res.redirect('/movies')
 })
