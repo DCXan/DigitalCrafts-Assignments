@@ -61,10 +61,12 @@ router.get('/genre/:genre', (req, res) => {
     } else {
     let filteredMovies = movies.filter(movie => movie.genre == genre)
 
-        if (filteredMovies.length === 0) {
+    let userFilteredMovies = filteredMovies.filter(movie => movie.userID == req.session.user.id)
+
+        if (userFilteredMovies.length === 0) {
             res.render('movies-list', {message: `No ${genre} movies to display.`})
         } else {
-        res.render('movies-list', {allMovies: filteredMovies})
+        res.render('movies-list', {allMovies: userFilteredMovies})
         }
     }
 })
