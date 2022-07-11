@@ -1,6 +1,6 @@
 .FeaturedReviews {
     background-color: rgb(162, 162, 162);
-    margin: 20, 10, 10, 10;
+    padding: 20px, 10px, 10px, 10px;
 }
 
 .FeaturedReviews h2 {
