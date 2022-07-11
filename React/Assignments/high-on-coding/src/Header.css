@@ -1,0 +1,14 @@
+.Header {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(0, 128, 255);
+    color: white;
+    align-items: center;
+    
+}
+
+.Header a {
+    color: white;
+}
