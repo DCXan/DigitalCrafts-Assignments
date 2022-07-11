@@ -6,11 +6,29 @@ import Name from "./Name";
 class App extends Component {
 
 render() {
+
+  const friends = [
+    {
+      firstName: "Jack",
+      lastName: "Bauer",
+      age: 35
+    },
+    {
+      firstName: "Jill",
+      lastName: "Mason",
+      age: 29
+    },
+    {
+      firstName: "Ash",
+      lastName: "Ketchum",
+      age: 14
+    }
+  ]
+
   return (
     <div>
-      <h1>Hello World</h1>
-      <h2>Second Heading</h2>
-      <Name firstName = "David" lastName = "Chang"/>
+      <h1>BookFace</h1>
+      <FriendList friends = {friends}/>
     </div>
     )
   
