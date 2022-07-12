@@ -1,10 +1,17 @@
 import React, { Component } from "react";
+import BookList from "./BookList";
+import Header from "./Header";
 
 class App extends Component {
+
+
   render() {
+
+    
     return (
       <div>
-        <h1>Book Barn</h1>
+        <Header/>
+        <BookList/>
 
       </div>
     )

@@ -1,0 +1,15 @@
+.booksDisplay {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bookItem {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 50px;
+}
+
+.bookItem img {
+    margin-top: 20px;
+}
