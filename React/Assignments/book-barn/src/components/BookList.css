@@ -1,15 +1,18 @@
 .booksDisplay {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .bookItem {
     display: flex;
     flex-direction: column;
-    text-align: center;
+    
     margin: 50px;
+    align-items: center;
 }
 
 .bookItem img {
     margin-top: 20px;
+    width: 200px;
 }

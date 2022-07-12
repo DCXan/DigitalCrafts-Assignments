@@ -3,34 +3,9 @@ import './BookList.css'
 
 class BookList extends Component {
 
-    constructor() {
-        super()
-        
-        this.state = {
-          books: []
-        }
-      }
-    
-      componentDidMount() {
-        this.fetchPhotos()
-      }
-      
-      fetchPhotos = () => {
-        
-        fetch('https://raw.githubusercontent.com/benoitvallon/100-best-books/master/books.json')
-        .then(response => 
-          response.json())
-          .then(result => {
-            this.setState({
-              books: result
-            })
-          })
-        
-      }
-
     render() {
 
-        const bookItems = this.state.books.map((book, index) => {
+        const bookItems = this.props.books.map((book, index) => {
             
             return (
               <li key = {index} className="bookItem">
