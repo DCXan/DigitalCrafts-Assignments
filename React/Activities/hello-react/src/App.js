@@ -37,10 +37,27 @@ class App extends Component {
   
 // }
 
+constructor() {
+  super() 
+  this.state = {
+    name: '' 
+  }
+}
+
+handleEnter = (value) => {
+  
+  this.setState({
+    name: value 
+  })
+}
+
 
 render() {
   return (
-    <Textbox/>
+    <div>
+      <h1>{this.state.name}</h1>
+      <Name onEnter = {this.handleEnter}/>
+    </div>
   )
 }
 
