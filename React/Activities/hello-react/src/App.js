@@ -1,67 +1,40 @@
-import React, { Component } from "react";
-import FriendList from "./FriendList";
-import Hello from "./Hello";
-import Name from "./Name";
-import Stepper from "./Stepper";
-import SwitchView from "./SwitchView";
-import Textbox from "./Textbox";
+import React, { useState, useEffect } from 'react'
+import DisplayUsers from './DisplayUsers'
+import StepperFn from './StepperFn'
 
-class App extends Component {
+function App() {
 
-// render() {
+    const [users, setUsers] = useState([])
 
-//   const friends = [
-//     {
-//       firstName: "Jack",
-//       lastName: "Bauer",
-//       age: 35
-//     },
-//     {
-//       firstName: "Jill",
-//       lastName: "Mason",
-//       age: 29
-//     },
-//     {
-//       firstName: "Ash",
-//       lastName: "Ketchum",
-//       age: 14
-//     }
-//   ]
+    const getUsers = async () => {
+        const response = await fetch('https://reqres.in/api/users?page=2')
+        const result = await response.json()
+        const users = await result.data
+        setUsers(users)
 
-//   return (
-//     <div>
-//       <h1>BookFace</h1>
-//       <FriendList friends = {friends}/>
-//     </div>
-//     )
-  
-// }
+        // fetch("https://reqres.in/api/users?page=2")
+        //   .then(response => response.json())
+        //   .then(result => result.data)
+        //   .then((users) => {
+        //     setUsers(users);
+        //   });
+        
+    }
 
-constructor() {
-  super() 
-  this.state = {
-    name: '' 
-  }
-}
+    useEffect(() => {
+        getUsers()
+        console.log(users)
+    }, [])
 
-handleEnter = (value) => {
-  
-  this.setState({
-    name: value 
-  })
+    return (
+        <div>
+            <DisplayUsers users = {users}/>
+        </div>
+    )
 }
 
 
-render() {
-  return (
-    <div>
-      <h1>{this.state.name}</h1>
-      <Name onEnter = {this.handleEnter}/>
-    </div>
-  )
-}
 
 
-}
 
 export default App
