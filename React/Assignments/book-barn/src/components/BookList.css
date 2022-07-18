@@ -9,7 +9,7 @@
     flex-direction: column;
     
     margin: 50px;
-    align-items: center;
+    text-align: center;
 }
 
 .bookItem img {
