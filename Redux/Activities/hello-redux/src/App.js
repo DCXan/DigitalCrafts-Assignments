@@ -1,11 +1,12 @@
 import { connect } from 'react-redux'
 import React from 'react'
 import Counter from './components/Counter'
+import ToDoList from './components/ToDoList'
 
 function App(props) {
   return (
     <div>
-      <Counter/>
+      <ToDoList/>
     </div>
   )
 }

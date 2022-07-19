@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import { useState } from 'react'
+import * as actionTypes from '../storage/actions/actionTypes'
 
 function AddSubCounter(props) {
 
@@ -22,8 +23,8 @@ function AddSubCounter(props) {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onSubtract: (value) => dispatch({type: 'SUBTRACT', value: value}),
-        onAdd: (value) => dispatch({type: 'ADD', value: value})
+        onSubtract: (value) => dispatch({type: actionTypes.SUBTRACT, value: value}),
+        onAdd: (value) => dispatch({type: actionTypes.ADD, value: value})
     }
 }
 
