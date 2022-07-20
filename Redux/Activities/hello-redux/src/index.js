@@ -3,12 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {createStore} from 'redux'
+import {createStore, combineReducers} from 'redux'
 import { Provider } from 'react-redux'
-import reducer from './store/reducer';
+import counterReducer from './store/reducers/counter'
+import imageReducer from './store/reducers/images'
 
+const rootReducer = combineReducers({
+  counterReducer: counterReducer,
+  imageReducer: imageReducer
+})
 
-const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

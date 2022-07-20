@@ -23,7 +23,7 @@ function Counter(props) {
 
 const mapStateToProps = (state) => {
     return {
-      ctr: state.counter
+      ctr: state.counterReducer.counter
     }
   }
 
